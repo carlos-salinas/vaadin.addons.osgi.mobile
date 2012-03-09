@@ -23,7 +23,7 @@ import com.vaadin.addon.touchkit.ui.TouchKitApplication;
 import com.vaadin.addon.touchkit.ui.TouchKitWindow;
 import com.vaadin.ui.Window;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({ "deprecation", "serial" })
 public class MobileApplicationOSGiServlet extends AbstractApplicationServlet {
 
 	// Private fields
@@ -32,6 +32,7 @@ public class MobileApplicationOSGiServlet extends AbstractApplicationServlet {
 	private Class<? extends TouchKitApplication> touchkitApplicationClass;
 	private Class<? extends Application> fallbackApplicationClass;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void init(ServletConfig servletConfig) throws ServletException {
 

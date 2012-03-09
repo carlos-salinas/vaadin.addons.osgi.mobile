@@ -11,23 +11,24 @@
 
 	<properties>
 		<slf4j.version>1.5.0</slf4j.version>
-		<spring.maven.artifact.version>2.5.6.SEC01</spring.maven.artifact.version>
+		<spring.maven.artifact.version>3.0.5.RELEASE</spring.maven.artifact.version>
 		<spring.osgi.version>1.2.1</spring.osgi.version>
-		<equinox.ver>3.2.2</equinox.ver>
+		<vaadin.version>6.7.1</vaadin.version>
+		<vaadin.addon.touchkit.version>2.0.0</vaadin.addon.touchkit.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin</artifactId>
-			<version>6.7.1</version>
+			<version>${vaadin.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin.addon</groupId>
 			<artifactId>vaadin-touchkit-agpl</artifactId>
-			<version>2.0.0</version>
+			<version>${vaadin.addon.touchkit.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -46,7 +47,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>org.springframework.context</artifactId>
-			<version>3.0.0.M3</version>
+			<version>${spring.maven.artifact.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -80,11 +81,10 @@
 					<removeNullHeaders>true</removeNullHeaders>
 					<manifestHeaders><![CDATA[Bundle-ManifestVersion: 2
 Bundle-Name: Vaadin Mobile Fragment Bundle
-Bundle-Description: OSGi-fy the Touchkit Vaadin Addon's Servlet
 Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
 Bundle-Version: ${project.version}
 Fragment-Host: com.vaadin;bundle-version="[6.6.6,7.0.0)"
-Require-Bundle: com.thingtrack.com.vaadin.addons.touchkit;bundle-version="2.0.0"
+Require-Bundle: com.thingtrack.com.vaadin.addons.touchkit;bundle-version="${vaadin.addon.touchkit.version}"
 ]]></manifestHeaders>
 				</configuration>
 				<!-- generate the manifest automatically during packaging -->

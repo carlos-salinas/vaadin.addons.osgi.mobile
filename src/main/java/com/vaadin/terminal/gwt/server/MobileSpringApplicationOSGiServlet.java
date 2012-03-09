@@ -9,22 +9,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.Version;
-import org.osgi.service.packageadmin.ExportedPackage;
-import org.osgi.service.packageadmin.PackageAdmin;
 import org.springframework.context.ApplicationContext;
 
 import com.vaadin.Application;
 import com.vaadin.addon.touchkit.service.ApplicationIcon;
-import com.vaadin.addon.touchkit.ui.TouchKitApplication;
 import com.vaadin.addon.touchkit.ui.TouchKitWindow;
 import com.vaadin.ui.Window;
 
+@SuppressWarnings("serial")
 public class MobileSpringApplicationOSGiServlet extends
 		AbstractApplicationServlet {
 
